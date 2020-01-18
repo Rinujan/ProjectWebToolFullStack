@@ -1,0 +1,133 @@
+input{
+  color: #2980b9;
+  font-size: 18px;
+  background-color: white;
+  width: 100%;
+  padding: 13px 13px 13px 20px;
+  box-sizing: border-box;
+  border: 3px solid rgba(0, 0, 0, 0);
+  outline: none;
+  border: none;
+  opacity: 0.5;
+  
+}
+img{
+  width: 200px;
+  height: 200px;
+}
+input:hover{
+opacity: 0.8;
+}
+.thumbnail img {
+  width: 100%;
+
+}
+.thumbnail{
+  padding: 0;
+}
+
+.thumbnail .caption-full{
+  padding: 9px;
+}
+h2{
+  font-family: Crete round;
+  border: none;
+}
+ul{
+  list-style: none;
+}
+li{
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: white;
+  line-height: 40px;
+  margin: 5px;
+  padding: 10px;
+  padding-top:1px;
+  padding-bottom: 0;
+  opacity: 0.7;
+  font-family: Crete round;
+}
+li:hover{
+opacity: 1.0;
+}
+li:nth-child(1){
+text-align: left;
+}
+.inlineclass{
+  display: inline;
+}
+body{
+  background-color: rgb(248, 252, 255);
+  font-family: Crete round;
+}
+.fa-plus{
+  opacity: 0.3;
+}
+.fa-plus:hover{
+  opacity: 0.7;
+}
+.fa-times-circle{
+  float:right;
+  font-weight:20px;
+  opacity: 0.5;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+.fa-times-circle:hover{
+  opacity: 1.0;
+}
+
+.jumbotron{
+margin: 0;
+margin-bottom: 10px;
+padding: 5px;
+padding-bottom: 10px;
+font-family: Crete round;
+background-color: rgb(248, 252, 255); 
+}
+#navclass{
+  background-color:#e3f2fd;
+  font-family: Crete round;
+}
+#form{
+  margin: 0 auto;
+  width: 50%;
+  font-family: Crete round;
+}
+#grid{
+  margin: 15px;
+ text-align: center;
+}
+.body{
+  padding: 10px;
+}
+.red{
+  font-size: 15px;
+  padding: 10px;
+  color: red;
+  font-family: Crete round;
+}
+.permissionalert{
+  text-align: right;
+  padding: 1px;
+}
+#flash{
+  text-align: right;
+  margin-right: 20px;
+}
+.signup{
+  padding-top:0;
+  margin-top: 0;
+}
+.username{
+  text-transform: capitalize;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+
+<%- include ('../partial/header.ejs') %>
+
+<div id="jumbotron" class="container">
+<div class="jumbotron jumbotron-fluid">
+	<h1 class="display-4">Welcome to ProjectWebTool!</h1>
+	<p class="lead">View all your Projects Below</p>
+	<p><a class= "btn btn-info btn-large" href="/projects/new"> Add new Project</a></p>
+</div>
+<hr class="my-4">
+
+<div id="grid" class="row">
+
+<% allProjects.forEach(function(project){ %>
+	<div class= "col-3 mb-4"> 
+	<div class="card h-100">
+
+		<img src= "<%=project.projectImage %>" class="card-img-top">
+		<div class="card-body">
+		<p class="card-title"> <%= project.projectName %> </p>
+		<p> <a href="/projects/<%= project._id %> " class= " btn btn-primary">Manage Project</a> </p>
+		</div>
+	</div>
+</div>
+<% }); %>
+	</div>
+</div>
+
+<%- include ('../partial/footer.ejs') %>

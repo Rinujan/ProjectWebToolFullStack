@@ -1,0 +1,117 @@
+<%- include ('../partial/header.ejs') %>
+
+  <div class="container-fluid">
+  <div class="jumbotron jumbotron-fluid">
+  <h1 class="display-4"> <%=project.projectName%> </h1>
+  <p class="lead"> <%=project.projectDescription%> </p>
+  <hr class="my-4">
+  <a id="deliverable" class="btn btn-outline-info btn-lg" href="http://<%=project.projectResources%>" role="button">Resources</a>
+  <form class="inlineclass pull-right" action="/projects/<%=project._id%>?_method=DELETE" method="POST">  
+  <button class="btn btn-outline-danger btn-lg pull-right">Delete</button></form>
+
+  <a class="btn btn-outline-warning btn-lg pull-right" href="/projects/<%=project._id%>/edit">Edit</a>
+  
+</div>
+ <% if(error && error.length >0) {  %>
+        <div class="red permissionalert" role="alert">
+        <%=error%>
+        </div>
+        <%}%>
+
+      <div class="row border justify-content-around">
+
+        <div class="col-sm-3">
+        <h2>Backlog</h2>
+        <form action="/projects/<%=project._id%>/todos" method="POST">
+        <input type="text" name="todos[Backlog]" placeholder="Enter New Task">
+        </form>
+
+      <%project.todos.forEach(function(todos){%>
+       <% if(todos.Backlog){ %>
+        <div class="row">
+          <div class="col-md-12">
+        <ul class="list-group list-group-flush">
+          <form action="/projects/<%=project._id%>/todos/<%=todos._id%>?_method=DELETE" method="POST">
+          <li><button class='fa fa-times-circle'></button> <%=todos.Backlog%>
+               <blockquote class="blockquote text-right">
+                <footer class="blockquote-footer"><cite title="Source Title"><span class="username"><%=todos.projectuser.username%></span> </cite></footer>
+              </blockquote>
+              </li>
+          </form>
+        </ul>
+      </div>
+    </div>
+
+      <%}});%>     
+      </div>
+
+
+        <div class="col-sm-3">
+        <h2>Ready</h2>
+        <form action="/projects/<%=project._id%>/todos" method="POST">
+        <input type="text" name="todos[Ready]" placeholder="Enter New Task">
+        </form>
+
+      <%project.todos.forEach(function(todos){%>
+        <% if(todos.Ready){ %>
+        <div class="row">
+          <div class="col-md-12">
+        <ul class="list-group list-group-flush">
+        <form action="/projects/<%=project._id%>/todos/<%=todos._id%>?_method=DELETE" method="POST">
+          <li><button class='fa fa-times-circle'> </button><%=todos.Ready%> <blockquote class="blockquote text-right">
+                <footer class="blockquote-footer"><cite title="Source Title"><span class="username"><%=todos.projectuser.username%> </span></cite></footer>
+              </blockquote>
+              </li>
+        </form>
+        </ul>
+      </div>
+    </div>
+      <%}});%>     
+      </div>
+
+        <div class="col-sm-3">
+        <h2>On Going</h2>
+        <form action="/projects/<%=project._id%>/todos" method="POST">
+        <input type="text" name="todos[OnGoing]" placeholder="Enter New Task">
+        </form>
+
+      <%project.todos.forEach(function(todos){%>
+       <% if(todos.OnGoing){ %>
+        <div class="row">
+          <div class="col-md-12">
+        <ul class="list-group list-group-flush">
+        <form action="/projects/<%=project._id%>/todos/<%=todos._id%>?_method=DELETE" method="POST">
+          <li><button class='fa fa-times-circle'></button> <%=todos.OnGoing%><blockquote class="blockquote text-right">
+                <footer class="blockquote-footer"><cite title="Source Title"><span class="username"><%=todos.projectuser.username%> </span></cite></footer>
+              </blockquote> </li>
+        </form>
+        </ul>
+      </div>
+    </div>
+      <%}});%>     
+      </div>
+
+        <div class="col-sm-3">
+        <h2>Completed</h2>
+        <form action="/projects/<%=project._id%>/todos" method="POST">
+        <input type="text" name="todos[Completed]" placeholder="Enter New Task">
+        </form>
+
+      <%project.todos.forEach(function(todos){%>
+       <% if(todos.Completed){ %>
+        <div class="row">
+          <div class="col-md-12">
+        <ul class="list-group list-group-flush">
+        <form action="/projects/<%=project._id%>/todos/<%=todos._id%>?_method=DELETE" method="POST">
+          <li><button class='fa fa-times-circle'></button> <%=todos.Completed%><blockquote class="blockquote text-right">
+                <footer class="blockquote-footer"><cite title="Source Title"><span class="username"><%=todos.projectuser.username%></span> </cite></footer>
+              </blockquote></li>
+          </form>
+        </ul>
+      </div>
+    </div>
+      <%}});%>     
+      </div>
+      </div>
+  </div>
+  <%- include ('../partial/footer.ejs') %>

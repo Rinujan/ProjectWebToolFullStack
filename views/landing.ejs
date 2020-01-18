@@ -1,0 +1,35 @@
+<%- include ('partial/landingheader.ejs') %>
+<div class="body">
+<h1> Welcome to ProjectWeb Tool </h1>
+<h4> The site that helps you manage all of your projects </h4>
+<div class="container">
+<div id="signup">
+<h2><br/> Create a New Account </h2>
+<br/>
+<form action="/register" method="POST">
+	<div class="form-group">
+
+    <label>Username</label>
+    <input type="text" value="" name="username" class="form-control" >
+    
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" name="password"  class="form-control" >
+  </div>
+
+  <% if(error2 && error2.length >0) {  %>
+        
+        <div class="red signup" role="alert">
+        <%=error2%>
+        </div>
+        <%}%>
+      
+
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+  </div>
+</form>
+</div>
+</div>
+<%- include ('partial/footer.ejs') %>

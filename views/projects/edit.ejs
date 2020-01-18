@@ -1,0 +1,43 @@
+<%- include ('../partial/header.ejs') %>
+
+
+<div class="container">
+<br/>
+<h1> Enter Project Information </h1>
+<br/>
+<form action="/projects/<%= projects._id %>?_method=PUT" method="POST">
+    <div class="form-group">
+
+    <label>Project Name</label>
+    <input type="text" name="projects[projectName]" class="form-control" >
+    
+  </div>
+
+  <div class="form-group">
+    <label>Image Url</label>
+    <input type="text" name="projects[projectImage]" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Project Description</label>
+    <input type="text" name="projects[projectDescription]" class="form-control">
+  </div>
+
+   <div class="form-group">
+    <label>Resource Url</label>
+    <input type="text" name="projects[projectResources]" class="form-control">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+
+</div>
+
+
+
+
+
+
+<%- include ('../partial/footer.ejs') %>
